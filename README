@@ -1,0 +1,24 @@
+Google Refine Helper Script for Data Science Toolkit
+by Matt Briney
+
+Licensed under GPL v3
+
+----------------------------------------------------
+
+This is a simple helper script that allows you to use
+the Address2Cooridnates API from the Data Science Toolkit
+in Google Refine.
+
+The script standardizes the returned function to a value
+that can be parsed by Google Refine's engine.
+
+
+To use:
+
+1) Upload the script to your webserver
+2) In Google Refine select the column with your address
+3) Select Create new column from URL
+4) Enter 'yourserver.com/index.php?address=' + escape(value,'url') in the query box
+5) Select the new column just created and create new field based on that column
+6) In the formula box enter: value.parseJson().result.fieldname
+
